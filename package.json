@@ -1,0 +1,27 @@
+{
+  "name": "almahra",
+  "version": "1.0.0",
+  "description": "An e-commerce webstite",
+  "author": "Karim Mahmoud",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.5.3",
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/toast": "^3.0.1",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "vue-promise-btn": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "nodemon": "^1.11.0",
+    "prettier": "1.14.3"
+  }
+}
