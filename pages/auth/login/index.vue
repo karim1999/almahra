@@ -2,7 +2,7 @@
   <div class="container login-container">
     <div class="row">
       <form v-on:submit.prevent='signIn' class="col-md-6 login-form-1">
-        <h3>{{this.$auth.loggedIn? "Yes" : "No"}}</h3>
+        <h3>{{this.$store.state.userid}}</h3>
         <div v-if="login.errorMsg" class="alert alert-danger" role="alert">
           {{login.errorMsg}}
         </div>
@@ -170,24 +170,24 @@
           alert(JSON.stringify(error))
         });
 
-          fetch(Server.dest + '/api/signup?phone='+this.state.phone.substr(1)+
-            '&password='+this.state.password +
-            '&email='+this.state.email +
-            '&username='+this.state.username +
-            locationData,
-            {headers: {'Cache-Control': 'no-cache'}}).
-          then((res) => res.json()).then((resJson) => {
-            if(resJson.response == 0)
-            {
-              this.setState({ errorMsg: 'انت بالفعل مُسجل عندنا' });
-            }
-            else
-            {
-              // Navigate to confirm screen
-              this.props.navigation.navigate("CodeVerification", { process: 0 /* means SIGN-UP*/,
-                device: this.state.phone.substr(1) });
-            }
-          })
+          // fetch(Server.dest + '/api/signup?phone='+this.state.phone.substr(1)+
+          //   '&password='+this.state.password +
+          //   '&email='+this.state.email +
+          //   '&username='+this.state.username +
+          //   locationData,
+          //   {headers: {'Cache-Control': 'no-cache'}}).
+          // then((res) => res.json()).then((resJson) => {
+          //   if(resJson.response == 0)
+          //   {
+          //     this.setState({ errorMsg: 'انت بالفعل مُسجل عندنا' });
+          //   }
+          //   else
+          //   {
+          //     // Navigate to confirm screen
+          //     this.props.navigation.navigate("CodeVerification", { process: 0 /* means SIGN-UP*/,
+          //       device: this.state.phone.substr(1) });
+          //   }
+          // })
       },
       async signIn(){
         // alert(this.$axios.defaults.baseURL);

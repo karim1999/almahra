@@ -182,6 +182,40 @@
       return {
         title: this.title,
       }
+    },
+    mounted(){
+      AsyncStorage.getItem('cart')
+        .then(ids => {
+          this.setState({
+            ids: ids
+          });
+        })
+        .then(() => {
+          fetch(Server.dest + '/api/meals-by-ids?ids=' + this.state.ids)
+            .then(res => res.json())
+            .then(meals => {
+
+              this.setState({
+                meals: meals.meals
+              });
+            });
+        })
+        .then(() => {
+          fetch(Server.dest + '/api/order-price?ids=' + this.state.ids)
+            .then(res => res.json())
+            .then(data => {
+              this.setState({
+                doneFetches: 1,
+                before_cost: data.before,
+                after_cost: data.after,
+                store_id: data.store_id,
+                deliveryTime:data.deliveryTime
+              });
+            });
+        });
+    },
+    methods: {
+
     }
   }
 </script>

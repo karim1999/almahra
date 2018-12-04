@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' }
     ],
     script: [
       { src: '/vendor/jquery/jquery-3.2.1.min.js' },
@@ -40,7 +41,6 @@ module.exports = {
   */
   css: [
     '~/assets/vendor/bootstrap/css/bootstrap.min.css',
-    '~/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css',
     '~/assets/fonts/iconic/css/material-design-iconic-font.min.css',
     '~/assets/fonts/linearicons-v1.0.0/icon-font.min.css',
     '~/assets/vendor/animate/animate.css',
@@ -70,13 +70,12 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/toast',
     '@nuxtjs/auth'
-
   ],
   /*
   ** Axios module configuration
   */
   axios: {
-    baseURL: "https://cors.io/?http://66.45.240.101:90"
+    baseURL: "http://142.44.242.171:90"
 
   },
 

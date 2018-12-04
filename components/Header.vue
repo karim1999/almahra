@@ -11,13 +11,10 @@
           </div>
 
           <div class="right-top-bar flex-w h-full">
-            <a href="#" class="flex-c-m trans-04 p-lr-25">
-              Help & FAQs
-            </a>
-
-            <a href="#" class="flex-c-m trans-04 p-lr-25">
-              My Account
-            </a>
+            <!--<a href="#" class="flex-c-m trans-04 p-lr-25">-->
+              <!--Help & FAQs-->
+            <!--</a>-->
+            <nuxt-link class="flex-c-m trans-04 p-lr-25" to="/cart">Cart</nuxt-link>
 
           </div>
         </div>
@@ -37,25 +34,31 @@
               <li class="active-menu">
                 <nuxt-link to="/">Home</nuxt-link>
               </li>
-
               <li class="label1" data-label1="hot">
-                Shop
-                <ul class="sub-menu">
-                  <li>
-                    <nuxt-link to="/salon">Salon</nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/store">Store</nuxt-link>
-                  </li>
-                </ul>
+                <nuxt-link to="/2">Clothes Center</nuxt-link>
               </li>
+              <li class="label1" data-label1="hot">
+                <nuxt-link to="/1">Beauty Center</nuxt-link>
+              </li>
+
+              <!--<li class="label1" data-label1="hot">-->
+                <!--Shop-->
+                <!--<ul class="sub-menu">-->
+                  <!--<li>-->
+                    <!--<nuxt-link to="/store/2">Clothes Center</nuxt-link>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                    <!--<nuxt-link to="/store/1">Beauty Center</nuxt-link>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</li>-->
 
               <li>
                 <nuxt-link to="/products">All Products</nuxt-link>
               </li>
 
               <li>
-                <nuxt-link to="/account">My Account</nuxt-link>
+                <nuxt-link to="/cart">Cart</nuxt-link>
               </li>
 
             </ul>
@@ -67,7 +70,7 @@
               <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart">
               <nuxt-link to="/cart">
                 <i class="zmdi zmdi-shopping-cart"></i>
               </nuxt-link>
