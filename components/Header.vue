@@ -53,9 +53,9 @@
                 <!--</ul>-->
               <!--</li>-->
 
-              <li>
-                <nuxt-link to="/products">All Products</nuxt-link>
-              </li>
+              <!--<li>-->
+                <!--<nuxt-link to="/products">All Products</nuxt-link>-->
+              <!--</li>-->
 
               <li>
                 <nuxt-link to="/cart">Cart</nuxt-link>
@@ -66,9 +66,9 @@
 
           <!-- Icon header -->
           <div class="wrap-icon-header flex-w flex-r-m">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-              <i class="zmdi zmdi-search"></i>
-            </div>
+            <!--<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">-->
+              <!--<i class="zmdi zmdi-search"></i>-->
+            <!--</div>-->
 
             <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart">
               <nuxt-link to="/cart">

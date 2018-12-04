@@ -59,7 +59,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/vue-promise-btn', ssr: false }
+    { src: '~/plugins/vue-promise-btn', ssr: false },
+    { src: '~/plugins/vue-localstorage', ssr: false }
   ],
 
   /*
@@ -77,6 +78,9 @@ module.exports = {
   axios: {
     baseURL: "http://142.44.242.171:90"
 
+  },
+  toast: {
+    position: 'top-center'
   },
 
   auth: {
