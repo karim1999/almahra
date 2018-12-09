@@ -40,6 +40,9 @@
                   <td class="column-4"><i @click="removeFromCart(product.key)" class="fa fa-times" style="color: red; cursor: pointer"></i></td>
                   <td class="column-5">$ {{product.price}}</td>
                 </tr>
+                <tr style="text-align: center" v-if="cart.length == 0">
+                  <td colspan="4">No data was found</td>
+                </tr>
 
               </table>
             </div>
@@ -138,7 +141,7 @@
               </div>
             </div>
 
-            <button @click="checkout" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+            <button v-if="total > 0" @click="checkout" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
               Proceed to Checkout
             </button>
           </div>
@@ -155,8 +158,8 @@
     data () {
       return {
         title: 'Almahra | Cart',
-        cart: {},
-        total: 0
+        cart: [],
+        total: 0,
       }
     },
     head () {
@@ -166,12 +169,14 @@
     },
     mounted(){
       let cart= JSON.parse(this.$localStorage.get('cart'));
-      this.cart= cart;
-      let total= 0;
-      for (let i= 0; i < cart.length; i++){
-        total += cart[i].price;
+      if(cart){
+        this.cart= cart;
+        let total= 0;
+        for (let i= 0; i < cart.length; i++){
+          total += cart[i].price;
+        }
+        this.total= total;
       }
-      this.total= total;
     },
     methods: {
       checkout(){
@@ -181,6 +186,7 @@
         let cart= JSON.parse(this.$localStorage.get('cart'));
         cart= _.filter(cart, product => product.key !== id );
         this.$localStorage.set('cart', JSON.stringify(cart));
+        this.cart= cart;
         this.$toast.show('Successfully removed from cart');
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <!-- Product Detail -->
-  <section class="sec-product-detail bg0 p-t-65 p-b-60">
+  <section style="min-height: 80vh" class="sec-product-detail bg0 p-t-65 p-b-60">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-7 p-b-30">
@@ -39,7 +39,10 @@
             <div class="p-t-33">
               <div class="flex-w flex-r-m p-b-10">
                 <div class="size-204 flex-w flex-m respon6-next">
-                  <button @click="addToCart" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                  <button v-if="isInCart" @click="removeFromCart" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                    Remove From Cart
+                  </button>
+                  <button v-else @click="addToCart" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                     Add to cart
                   </button>
                 </div>
@@ -63,7 +66,9 @@
     },
     data () {
       return {
-        title: `Almahra | ${ this.$route.params.id }`
+        title: `Almahra | ${ this.$route.params.id }`,
+        cart: [],
+        isInCart: false
       }
     },
     head () {
@@ -71,16 +76,28 @@
         title: `Almahra | ${ this.product.name }`,
       }
     },
+    mounted(){
+      let cart= JSON.parse(this.$localStorage.get('cart'));
+      this.cart= cart;
+      if(_.find(cart, product => product.key == this.product.key)){
+        this.isInCart= true;
+      }
+    },
     methods: {
       addToCart(){
         let cart= JSON.parse(this.$localStorage.get('cart'));
+        this.cart= cart;
+        this.isInCart= true;
         this.$localStorage.set('cart', JSON.stringify(_.compact(_.concat(cart, this.product))));
+        this.$toast.show('Successfully added to cart');
       },
       removeFromCart(){
         let cart= JSON.parse(this.$localStorage.get('cart'));
         cart= _.filter(cart, product => product.key !== this.product.key );
+        this.cart= cart;
+        this.isInCart= false;
         this.$localStorage.set('cart', JSON.stringify(cart));
-        this.$toast.show('Successfully added to cart');
+        this.$toast.show('Successfully removed from cart');
       }
     },
   }

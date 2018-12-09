@@ -36,6 +36,7 @@
               </nuxt-link>
             </div>
           </div>
+          <p v-if="!data">No data was found</p>
         </div>
       </div>
 

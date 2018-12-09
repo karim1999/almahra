@@ -80,7 +80,8 @@ module.exports = {
 
   },
   toast: {
-    position: 'top-center'
+    position: 'top-center',
+    duration : 3000
   },
 
   auth: {
