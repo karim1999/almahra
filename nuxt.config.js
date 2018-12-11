@@ -21,15 +21,49 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' }
     ],
     script: [
-      { src: '/vendor/jquery/jquery-3.2.1.min.js' },
-      { src: '/vendor/animsition/js/animsition.min.js' },
-      { src: '/vendor/bootstrap/js/popper.js' },
-      { src: '/vendor/bootstrap/js/bootstrap.min.js' },
-      { src: '/vendor/select2/select2.min.js' },
-      { src: '/vendor/MagnificPopup/jquery.magnific-popup.min.js' },
-      { src: '/vendor/perfect-scrollbar/perfect-scrollbar.min.js' },
-      { src: '/js/main.js' },
-      { src: '/main.js' }
+      {
+        src: '/vendor/jquery/jquery-3.2.1.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/animsition/js/animsition.min.js' ,
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/bootstrap/js/popper.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/bootstrap/js/bootstrap.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/select2/select2.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/MagnificPopup/jquery.magnific-popup.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/perfect-scrollbar/perfect-scrollbar.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/vendor/slick/slick.min.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/js/slick-custom.js',
+        type: "text/javascript"
+      },
+      {
+        src: '/js/main.js',
+      },
+      {
+        src: '/main.js',
+        type: "text/javascript"
+      }
 
     ],
   },
@@ -63,6 +97,7 @@ module.exports = {
   */
   plugins: [
     { src: '~/plugins/vue-promise-btn', ssr: false },
+    { src: '~/plugins/slider', ssr: false },
     { src: '~/plugins/vue-localstorage', ssr: false }
   ],
 

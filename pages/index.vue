@@ -1,5 +1,5 @@
 <template>
-    <div style="display: flex; flex: 1; background-color: #563d7c; min-height: 100vh; width: 100%; color: white; text-align: center; justify-content: center; align-items: center">
+    <div style="display: flex; flex: 1; background-color: #563d7c; min-height: 100vh; width: 100%; color: white; text-align: center; justify-content: center; align-items: center; background-image: url(images/back1.jpg);"">
       <div style="justify-content: center; align-items: center; text-align: center">
         <button @click="chooseStore(2)" class="btn btn-lg btn-dark" style="padding: 20px 30px; border-radius: 10px; margin-right: 70px">
           <i style="font-size: 130px;" class="fa fa-user"></i>

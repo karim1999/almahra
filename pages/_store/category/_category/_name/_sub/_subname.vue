@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-height: 80vh;">
     <!-- Product -->
     <section class="sec-product bg0 p-t-50 p-b-50">
       <div class="container">
@@ -18,7 +18,7 @@
               <!-- Block2 -->
               <div class="block2">
                 <div class="block2-pic hov-img0">
-                  <img :src="item.image" alt="IMG-PRODUCT">
+                  <img height="200" :src="item.image" alt="IMG-PRODUCT">
                   <nuxt-link :to="{name: 'product-id', params: {id: item.key} }" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                     Quick View
                   </nuxt-link>

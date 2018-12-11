@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-height: 80vh;">
     <!-- Product -->
     <section class="sec-product bg0 p-t-50 p-b-50">
       <div class="container">
