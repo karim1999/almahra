@@ -114,7 +114,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: "https://142.44.242.171:90"
+    baseURL: "https://laila-api.herokuapp.com"
 
   },
   toast: {
