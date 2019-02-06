@@ -114,7 +114,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: "http://142.44.242.171:90"
+    baseURL: "https://142.44.242.171:90"
 
   },
   toast: {
